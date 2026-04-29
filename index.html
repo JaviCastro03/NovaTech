@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaTech — Innovación Digital</title>
+
+  <!-- Bootstrap 5.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- 
+       NAVBAR
+  -->
+  <nav class="navbar navbar-expand-lg fixed-top nav-blur" aria-label="Navegación principal">
+    <div class="container">
+      <a class="navbar-brand brand-logo" href="#">
+        <span class="brand-icon">◈</span>
+        Nova<span class="brand-accent">Tech</span>
+      </a>
+
+      <div class="d-flex align-items-center gap-3 ms-auto">
+        <!-- Dark/Light Toggle -->
+        <div class="theme-toggle" role="switch" aria-checked="true" aria-label="Cambiar tema claro/oscuro" tabindex="0" id="themeToggle">
+          <span class="toggle-icon"><i class="bi bi-moon-stars-fill"></i></span>
+          <span class="toggle-icon"><i class="bi bi-sun-fill"></i></span>
+          <div class="toggle-thumb"></div>
+        </div>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Abrir menú">
+          <span class="toggler-custom"><span></span><span></span><span></span></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto gap-1">
+          <li class="nav-item"><a class="nav-link nav-pill active" href="#hero">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link nav-pill" href="#servicios">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link nav-pill" href="#portfolio">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link nav-pill" href="#contacto">Contacto</a></li>
+          <li class="nav-item ms-2">
+            <a class="btn btn-nova" href="dashboard.html">
+              <i class="bi bi-layout-sidebar me-1"></i>Dashboard
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 
+       HERO SECTION — Animaciones 
+  -->
+  <section id="hero" class="hero-section" aria-label="Sección principal">
+
+    <!-- Fondo animado: orbes flotantes -->
+    <div class="hero-bg" aria-hidden="true">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="grid-lines"></div>
+      <!-- Partículas -->
+      <div class="particles">
+        <span class="particle" style="--x:10%;--y:20%;--d:3s;--s:0.5"></span>
+        <span class="particle" style="--x:85%;--y:15%;--d:4s;--s:0.3"></span>
+        <span class="particle" style="--x:50%;--y:70%;--d:2.5s;--s:0.7"></span>
+        <span class="particle" style="--x:70%;--y:40%;--d:3.5s;--s:0.4"></span>
+        <span class="particle" style="--x:25%;--y:60%;--d:2s;--s:0.6"></span>
+        <span class="particle" style="--x:90%;--y:75%;--d:4.5s;--s:0.3"></span>
+        <span class="particle" style="--x:40%;--y:30%;--d:3.2s;--s:0.5"></span>
+        <span class="particle" style="--x:15%;--y:80%;--d:2.8s;--s:0.4"></span>
+      </div>
+    </div>
+
+    <div class="container hero-content">
+      <div class="row align-items-center min-vh-100">
+        <div class="col-lg-8">
+
+          <!-- Badge animado -->
+          <div class="hero-badge fade-up" style="--delay: 0s">
+            <span class="badge-dot"></span>
+            <span class="mono-text">v2.0 — Ahora disponible</span>
+          </div>
+
+          <!-- Título principal con efecto stagger -->
+          <h1 class="hero-title fade-up" style="--delay: 0.15s">
+            Construimos<br/>
+            el <span class="text-gradient">futuro</span><br/>
+            digital.
+          </h1>
+
+          <!-- Subtítulo -->
+          <p class="hero-subtitle fade-up" style="--delay: 0.3s">
+            Plataformas web de alto rendimiento, interfaces que enamoran
+            y código que escala. Sin excusas, sin plantillas.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="hero-cta fade-up" style="--delay: 0.45s">
+            <a href="#servicios" class="btn btn-nova btn-nova-lg">
+              Descubre qué hacemos
+              <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+            <a href="#portfolio" class="btn btn-outline-nova btn-nova-lg">
+              Ver proyectos
+            </a>
+          </div>
+
+          <!-- Stats rápidas -->
+          <div class="hero-stats fade-up" style="--delay: 0.6s">
+            <div class="stat-item">
+              <span class="stat-number">47<span class="accent">+</span></span>
+              <span class="stat-label">Proyectos entregados</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat-item">
+              <span class="stat-number">98<span class="accent">%</span></span>
+              <span class="stat-label">Satisfacción cliente</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat-item">
+              <span class="stat-number">3<span class="accent">x</span></span>
+              <span class="stat-label">Más rápido que la media</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Elemento decorativo derecha -->
+        <div class="col-lg-4 d-none d-lg-flex justify-content-center" aria-hidden="true">
+          <div class="hero-visual fade-up" style="--delay: 0.3s">
+            <div class="visual-card vc-main">
+              <div class="vc-header">
+                <span class="vc-dot red"></span>
+                <span class="vc-dot yellow"></span>
+                <span class="vc-dot green"></span>
+              </div>
+              <div class="vc-body">
+                <div class="code-line"><span class="cl-keyword">const</span> <span class="cl-var">nova</span> = {</div>
+                <div class="code-line pl-2"><span class="cl-key">stack</span>: <span class="cl-string">'modern'</span>,</div>
+                <div class="code-line pl-2"><span class="cl-key">speed</span>: <span class="cl-num">∞</span>,</div>
+                <div class="code-line pl-2"><span class="cl-key">quality</span>: <span class="cl-string">'A+'</span></div>
+                <div class="code-line">};</div>
+                <div class="code-line mt-2 cl-comment">// El código que importa</div>
+                <div class="typing-line"><span class="cl-fn">nova</span>.<span class="cl-method">launch</span>()<span class="cursor">▌</span></div>
+              </div>
+            </div>
+            <div class="visual-card vc-float-1">
+              <i class="bi bi-check2-circle text-success me-2"></i>
+              <span>Deploy exitoso</span>
+            </div>
+            <div class="visual-card vc-float-2">
+              <div class="mini-chart" aria-label="Gráfico de rendimiento">
+                <span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <small>Performance 99/100</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="scroll-indicator fade-up" style="--delay: 0.9s" aria-hidden="true">
+        <div class="scroll-line"></div>
+        <span class="mono-text">scroll</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 
+       SECCIÓN SERVICIOS — CSS Grid + Bootstrap Cards
+   -->
+  <section id="servicios" class="section-pad" aria-labelledby="servicios-titulo">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-tag mono-text">/ servicios</span>
+        <h2 class="section-title" id="servicios-titulo">
+          Lo que <span class="text-gradient">construimos</span>
+        </h2>
+        <p class="section-subtitle">
+          Soluciones digitales completas, desde la idea hasta el deploy.
+        </p>
+      </div>
+
+      <!-- CSS Grid Layout asimétrico (no el grid de Bootstrap) -->
+      <div class="services-mosaic" role="list">
+
+        <!-- Card grande — ocupa 2 columnas y 2 filas -->
+        <div class="card nova-card card-featured" role="listitem">
+          <div class="card-body">
+            <div class="service-icon-wrap"><i class="bi bi-code-slash" aria-hidden="true"></i></div>
+            <h3 class="card-title">Desarrollo Web Full-Stack</h3>
+            <p class="card-text">
+              Aplicaciones web modernas con React, Vue o frameworks nativos.
+              Performance real, código limpio y arquitectura que aguanta el crecimiento.
+            </p>
+            <ul class="service-list">
+              <li><i class="bi bi-check2" aria-hidden="true"></i> SPA & SSR</li>
+              <li><i class="bi bi-check2" aria-hidden="true"></i> APIs REST & GraphQL</li>
+              <li><i class="bi bi-check2" aria-hidden="true"></i> CI/CD Pipelines</li>
+            </ul>
+            <a href="#contacto" class="btn btn-nova mt-auto">Saber más</a>
+          </div>
+        </div>
+
+        <!-- Card normal -->
+        <div class="card nova-card" role="listitem">
+          <div class="card-body">
+            <div class="service-icon-wrap"><i class="bi bi-palette2" aria-hidden="true"></i></div>
+            <h3 class="card-title">UI/UX Design</h3>
+            <p class="card-text">
+              Interfaces que convierten. Diseño centrado en el usuario con sistemas de diseño escalables.
+            </p>
+            <a href="#contacto" class="btn btn-outline-nova mt-auto">Contactar</a>
+          </div>
+        </div>
+
+        <!-- Card normal -->
+        <div class="card nova-card" role="listitem">
+          <div class="card-body">
+            <div class="service-icon-wrap"><i class="bi bi-phone" aria-hidden="true"></i></div>
+            <h3 class="card-title">Apps Móviles</h3>
+            <p class="card-text">
+              React Native y Flutter. Una base de código, dos plataformas, resultados nativos.
+            </p>
+            <a href="#contacto" class="btn btn-outline-nova mt-auto">Contactar</a>
+          </div>
+        </div>
+
+        <!-- Card wide — ocupa 2 columnas -->
+        <div class="card nova-card card-wide" role="listitem">
+          <div class="card-body d-flex flex-column flex-md-row gap-4 align-items-start">
+            <div class="service-icon-wrap flex-shrink-0"><i class="bi bi-cloud-arrow-up" aria-hidden="true"></i></div>
+            <div>
+              <h3 class="card-title">Cloud & DevOps</h3>
+              <p class="card-text">
+                Infraestructura en AWS, GCP o Azure. Docker, Kubernetes y automatización de deployments.
+                Tú céntrate en el código, nosotros en que funcione.
+              </p>
+              <div class="tech-pills">
+                <span class="tech-pill">AWS</span>
+                <span class="tech-pill">Docker</span>
+                <span class="tech-pill">K8s</span>
+                <span class="tech-pill">Terraform</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card normal -->
+        <div class="card nova-card" role="listitem">
+          <div class="card-body">
+            <div class="service-icon-wrap"><i class="bi bi-shield-check" aria-hidden="true"></i></div>
+            <h3 class="card-title">Ciberseguridad</h3>
+            <p class="card-text">
+              Auditorías, pentesting y hardenización de aplicaciones web. Tu código, blindado.
+            </p>
+            <a href="#contacto" class="btn btn-outline-nova mt-auto">Contactar</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 
+       PORTFOLIO / GALERÍA — Modal Bootstrap + filtros CSS
+ -->
+  <section id="portfolio" class="section-pad section-alt" aria-labelledby="portfolio-titulo">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-tag mono-text">/ portfolio</span>
+        <h2 class="section-title" id="portfolio-titulo">
+          Proyectos <span class="text-gradient">reales</span>
+        </h2>
+        <p class="section-subtitle">Haz clic en cualquier proyecto para ver los detalles.</p>
+      </div>
+
+      <!-- Grid de proyectos -->
+      <div class="portfolio-grid" role="list">
+
+        <!-- Proyecto 1 -->
+        <article class="portfolio-item" role="listitem">
+          <button class="portfolio-btn" data-bs-toggle="modal" data-bs-target="#modal1"
+            aria-label="Ver detalles del proyecto EcoCommerce">
+            <div class="portfolio-img-wrap">
+              <img src="https://picsum.photos/seed/ecom/600/400" alt="Captura del proyecto EcoCommerce, tienda online sostenible" loading="lazy" />
+              <div class="portfolio-overlay">
+                <span class="overlay-tag">E-Commerce</span>
+                <h3>EcoCommerce</h3>
+                <p>Tienda online sostenible con React + Node</p>
+                <span class="overlay-cta"><i class="bi bi-zoom-in"></i> Ver proyecto</span>
+              </div>
+            </div>
+          </button>
+        </article>
+
+        <!-- Proyecto 2 -->
+        <article class="portfolio-item" role="listitem">
+          <button class="portfolio-btn" data-bs-toggle="modal" data-bs-target="#modal2"
+            aria-label="Ver detalles del proyecto DataViz Dashboard">
+            <div class="portfolio-img-wrap">
+              <img src="https://picsum.photos/seed/dash/600/400" alt="Captura del dashboard de análisis de datos DataViz" loading="lazy" />
+              <div class="portfolio-overlay">
+                <span class="overlay-tag">Dashboard</span>
+                <h3>DataViz Pro</h3>
+                <p>Panel de análisis en tiempo real</p>
+                <span class="overlay-cta"><i class="bi bi-zoom-in"></i> Ver proyecto</span>
+              </div>
+            </div>
+          </button>
+        </article>
+
+        <!-- Proyecto 3 -->
+        <article class="portfolio-item" role="listitem">
+          <button class="portfolio-btn" data-bs-toggle="modal" data-bs-target="#modal3"
+            aria-label="Ver detalles del proyecto HealthTrack App">
+            <div class="portfolio-img-wrap">
+              <img src="https://picsum.photos/seed/health/600/400" alt="Captura de la app móvil HealthTrack" loading="lazy" />
+              <div class="portfolio-overlay">
+                <span class="overlay-tag">Mobile App</span>
+                <h3>HealthTrack</h3>
+                <p>App de salud con Flutter</p>
+                <span class="overlay-cta"><i class="bi bi-zoom-in"></i> Ver proyecto</span>
+              </div>
+            </div>
+          </button>
+        </article>
+
+        <!-- Proyecto 4 -->
+        <article class="portfolio-item" role="listitem">
+          <button class="portfolio-btn" data-bs-toggle="modal" data-bs-target="#modal4"
+            aria-label="Ver detalles del proyecto FinSight">
+            <div class="portfolio-img-wrap">
+              <img src="https://picsum.photos/seed/finance/600/400" alt="Captura de la plataforma financiera FinSight" loading="lazy" />
+              <div class="portfolio-overlay">
+                <span class="overlay-tag">FinTech</span>
+                <h3>FinSight</h3>
+                <p>Plataforma financiera B2B</p>
+                <span class="overlay-cta"><i class="bi bi-zoom-in"></i> Ver proyecto</span>
+              </div>
+            </div>
+          </button>
+        </article>
+
+        <!-- Proyecto 5 -->
+        <article class="portfolio-item" role="listitem">
+          <button class="portfolio-btn" data-bs-toggle="modal" data-bs-target="#modal5"
+            aria-label="Ver detalles del proyecto CampusNet">
+            <div class="portfolio-img-wrap">
+              <img src="https://picsum.photos/seed/campus/600/400" alt="Captura de la plataforma educativa CampusNet" loading="lazy" />
+              <div class="portfolio-overlay">
+                <span class="overlay-tag">EdTech</span>
+                <h3>CampusNet</h3>
+                <p>LMS universitario personalizado</p>
+                <span class="overlay-cta"><i class="bi bi-zoom-in"></i> Ver proyecto</span>
+              </div>
+            </div>
+          </button>
+        </article>
+
+        <!-- Proyecto 6 -->
+        <article class="portfolio-item" role="listitem">
+          <button class="portfolio-btn" data-bs-toggle="modal" data-bs-target="#modal6"
+            aria-label="Ver detalles del proyecto LogiTrack">
+            <div class="portfolio-img-wrap">
+              <img src="https://picsum.photos/seed/logi/600/400" alt="Captura del sistema de logística LogiTrack" loading="lazy" />
+              <div class="portfolio-overlay">
+                <span class="overlay-tag">Logística</span>
+                <h3>LogiTrack</h3>
+                <p>Sistema de gestión de envíos</p>
+                <span class="overlay-cta"><i class="bi bi-zoom-in"></i> Ver proyecto</span>
+              </div>
+            </div>
+          </button>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+</body>
+</html>
