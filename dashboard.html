@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaTech — Dashboard</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body class="dashboard-body">
+
+  <!-- 
+       OFFCANVAS — Menú móvil
+  -->
+  <div class="offcanvas offcanvas-start nova-offcanvas" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
+    <div class="offcanvas-header border-bottom border-secondary">
+      <h2 class="offcanvas-title brand-logo" id="sidebarOffcanvasLabel">
+        <span class="brand-icon">◈</span>
+        Nova<span class="brand-accent">Tech</span>
+      </h2>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar menú"></button>
+    </div>
+    <div class="offcanvas-body p-0">
+      <nav aria-label="Navegación del dashboard (móvil)">
+        <ul class="sidebar-nav">
+          <li><a href="#" class="sidebar-link active" aria-current="page"><i class="bi bi-grid-1x2-fill" aria-hidden="true"></i> Overview</a></li>
+          <li><a href="#" class="sidebar-link"><i class="bi bi-people-fill" aria-hidden="true"></i> Clientes</a></li>
+          <li><a href="#" class="sidebar-link"><i class="bi bi-folder2-open" aria-hidden="true"></i> Proyectos</a></li>
+          <li><a href="#" class="sidebar-link"><i class="bi bi-graph-up-arrow" aria-hidden="true"></i> Analítica</a></li>
+          <li><a href="#" class="sidebar-link"><i class="bi bi-shield-lock" aria-hidden="true"></i> Seguridad</a></li>
+          <li><a href="#" class="sidebar-link"><i class="bi bi-gear-fill" aria-hidden="true"></i> Ajustes</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- 
+       LAYOUT PRINCIPAL: SIDEBAR + MAIN
+  -->
+  <div class="dashboard-layout">
+
+    <!-- SIDEBAR fijo — solo desktop -->
+    <aside class="sidebar" aria-label="Barra lateral de navegación">
+      <div class="sidebar-header">
+        <a href="index.html" class="brand-logo" aria-label="Ir a la página principal de NovaTech">
+          <span class="brand-icon">◈</span>
+          Nova<span class="brand-accent">Tech</span>
+        </a>
+      </div>
+
+      <nav class="sidebar-body" aria-label="Navegación principal del dashboard">
+        <span class="sidebar-section-label">PRINCIPAL</span>
+        <ul class="sidebar-nav">
+          <li>
+            <a href="#" class="sidebar-link active" aria-current="page">
+              <i class="bi bi-grid-1x2-fill" aria-hidden="true"></i>
+              <span>Overview</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="sidebar-link">
+              <i class="bi bi-people-fill" aria-hidden="true"></i>
+              <span>Clientes</span>
+              <span class="sidebar-badge" aria-label="3 elementos nuevos">3</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="sidebar-link">
+              <i class="bi bi-folder2-open" aria-hidden="true"></i>
+              <span>Proyectos</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="sidebar-link">
+              <i class="bi bi-graph-up-arrow" aria-hidden="true"></i>
+              <span>Analítica</span>
+            </a>
+          </li>
+        </ul>
+
+        <span class="sidebar-section-label">SISTEMA</span>
+        <ul class="sidebar-nav">
+          <li>
+            <a href="#" class="sidebar-link">
+              <i class="bi bi-shield-lock" aria-hidden="true"></i>
+              <span>Seguridad</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="sidebar-link">
+              <i class="bi bi-gear-fill" aria-hidden="true"></i>
+              <span>Ajustes</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-card" aria-label="Información del usuario actual">
+          <div class="user-avatar" aria-hidden="true">JD</div>
+          <div class="user-info">
+            <span class="user-name">Juan Dev</span>
+            <span class="user-role">Admin</span>
+          </div>
+          <button class="btn btn-sm btn-link p-0 ms-auto" aria-label="Opciones de usuario">
+            <i class="bi bi-three-dots-vertical" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="dashboard-main" id="main-content">
+
+      <!-- Topbar -->
+      <header class="dash-topbar" role="banner">
+        <!-- Botón hamburguesa (solo mobile) -->
+        <button class="btn btn-sm btn-icon d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas" aria-label="Abrir menú de navegación">
+          <i class="bi bi-list fs-4" aria-hidden="true"></i>
+        </button>
+
+        <div class="topbar-title">
+          <h1 class="dash-page-title">Overview</h1>
+          <span class="dash-breadcrumb mono-text" aria-label="Ruta: Dashboard / Overview">/ dashboard / overview</span>
+        </div>
+
+        <div class="topbar-actions ms-auto d-flex align-items-center gap-2">
+          <!-- Theme toggle -->
+          <div class="theme-toggle" role="switch" aria-checked="true" aria-label="Cambiar tema" tabindex="0" id="dashThemeToggle">
+            <span class="toggle-icon"><i class="bi bi-moon-stars-fill" aria-hidden="true"></i></span>
+            <span class="toggle-icon"><i class="bi bi-sun-fill" aria-hidden="true"></i></span>
+            <div class="toggle-thumb"></div>
+          </div>
+
+          <!-- Notificaciones con Toast trigger -->
+          <button class="btn btn-icon position-relative" id="notifBtn" aria-label="Notificaciones (2 sin leer)">
+            <i class="bi bi-bell-fill" aria-hidden="true"></i>
+            <span class="notif-dot" aria-hidden="true"></span>
+          </button>
+
+          <!-- Avatar topbar -->
+          <div class="user-avatar-sm" aria-hidden="true">JD</div>
+        </div>
+      </header>
+
+      <!-- ───── CONTENIDO DEL DASHBOARD ───── -->
+      <div class="dash-content">
+
+        <!-- ── KPI Cards ── -->
+        <section aria-labelledby="kpi-section">
+          <h2 id="kpi-section" class="visually-hidden">Indicadores clave de rendimiento</h2>
+          <div class="kpi-grid">
+
+            <article class="kpi-card kpi-primary" aria-label="Ingresos del mes: 128.450 euros, incremento del 12%">
+              <div class="kpi-icon"><i class="bi bi-currency-euro" aria-hidden="true"></i></div>
+              <div class="kpi-body">
+                <span class="kpi-label">Ingresos mes</span>
+                <span class="kpi-value">128.450 €</span>
+                <span class="kpi-trend up"><i class="bi bi-arrow-up-short" aria-hidden="true"></i>12% vs mes anterior</span>
+              </div>
+            </article>
+
+            <article class="kpi-card" aria-label="Proyectos activos: 14, incremento de 3">
+              <div class="kpi-icon"><i class="bi bi-kanban-fill" aria-hidden="true"></i></div>
+              <div class="kpi-body">
+                <span class="kpi-label">Proyectos activos</span>
+                <span class="kpi-value">14</span>
+                <span class="kpi-trend up"><i class="bi bi-arrow-up-short" aria-hidden="true"></i>+3 este mes</span>
+              </div>
+            </article>
+
+            <article class="kpi-card" aria-label="Nuevos clientes: 7, incremento del 8%">
+              <div class="kpi-icon"><i class="bi bi-person-plus-fill" aria-hidden="true"></i></div>
+              <div class="kpi-body">
+                <span class="kpi-label">Nuevos clientes</span>
+                <span class="kpi-value">7</span>
+                <span class="kpi-trend up"><i class="bi bi-arrow-up-short" aria-hidden="true"></i>8% conversión</span>
+              </div>
+            </article>
+
+            <article class="kpi-card" aria-label="Uptime del sistema: 99.98%">
+              <div class="kpi-icon"><i class="bi bi-server" aria-hidden="true"></i></div>
+              <div class="kpi-body">
+                <span class="kpi-label">Uptime sistema</span>
+                <span class="kpi-value">99.98%</span>
+                <span class="kpi-trend up"><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Todos los sistemas OK</span>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- ── Progress Bars (Bootstrap personalizado) ── -->
+        <section class="dash-card" aria-labelledby="progress-titulo">
+          <div class="dash-card-header">
+            <h2 id="progress-titulo" class="dash-card-title">Progreso de proyectos</h2>
+            <span class="mono-text text-muted small">Q2 2025</span>
+          </div>
+
+          <div class="progress-list">
+
+            <div class="progress-item">
+              <div class="d-flex justify-content-between mb-1">
+                <span class="fw-500">EcoCommerce v2</span>
+                <span class="mono-text accent">87%</span>
+              </div>
+              <div class="progress nova-progress" role="progressbar" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100" aria-label="Progreso de EcoCommerce v2: 87%">
+                <div class="progress-bar" style="width: 87%"></div>
+              </div>
+            </div>
+
+            <div class="progress-item">
+              <div class="d-flex justify-content-between mb-1">
+                <span class="fw-500">DataViz Pro</span>
+                <span class="mono-text accent">62%</span>
+              </div>
+              <div class="progress nova-progress" role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100" aria-label="Progreso de DataViz Pro: 62%">
+                <div class="progress-bar progress-warning" style="width: 62%"></div>
+              </div>
+            </div>
+
+            <div class="progress-item">
+              <div class="d-flex justify-content-between mb-1">
+                <span class="fw-500">HealthTrack 3.0</span>
+                <span class="mono-text accent">41%</span>
+              </div>
+              <div class="progress nova-progress" role="progressbar" aria-valuenow="41" aria-valuemin="0" aria-valuemax="100" aria-label="Progreso de HealthTrack 3.0: 41%">
+                <div class="progress-bar progress-info" style="width: 41%"></div>
+              </div>
+            </div>
+
+            <div class="progress-item">
+              <div class="d-flex justify-content-between mb-1">
+                <span class="fw-500">FinSight API</span>
+                <span class="mono-text accent">95%</span>
+              </div>
+              <div class="progress nova-progress" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="Progreso de FinSight API: 95%">
+                <div class="progress-bar progress-success" style="width: 95%"></div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ── Tabla de clientes + Accordion ── -->
+        <div class="row g-4">
+
+          <!-- Tabla de proyectos -->
+          <div class="col-xl-7">
+            <section class="dash-card" aria-labelledby="tabla-titulo">
+              <div class="dash-card-header">
+                <h2 id="tabla-titulo" class="dash-card-title">Proyectos recientes</h2>
+                <button class="btn btn-sm btn-nova" aria-label="Ver todos los proyectos">Ver todos</button>
+              </div>
+
+              <div class="table-responsive">
+                <table class="table nova-table" aria-label="Tabla de proyectos recientes">
+                  <thead>
+                    <tr>
+                      <th scope="col">Proyecto</th>
+                      <th scope="col">Cliente</th>
+                      <th scope="col">Estado</th>
+                      <th scope="col">Prioridad</th>
+                      <th scope="col">Deadline</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="fw-500">EcoCommerce v2</td>
+                      <td>GreenLeaf Co.</td>
+                      <td><span class="status-badge status-active">En curso</span></td>
+                      <td><span class="priority-badge priority-high">Alta</span></td>
+                      <td class="mono-text">30/06/25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-500">DataViz Pro</td>
+                      <td>Analytics Hub</td>
+                      <td><span class="status-badge status-review">Revisión</span></td>
+                      <td><span class="priority-badge priority-mid">Media</span></td>
+                      <td class="mono-text">15/07/25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-500">HealthTrack</td>
+                      <td>MedCare SL</td>
+                      <td><span class="status-badge status-active">En curso</span></td>
+                      <td><span class="priority-badge priority-high">Alta</span></td>
+                      <td class="mono-text">01/08/25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-500">FinSight API</td>
+                      <td>Banco Digital</td>
+                      <td><span class="status-badge status-done">Completado</span></td>
+                      <td><span class="priority-badge priority-low">Baja</span></td>
+                      <td class="mono-text">20/05/25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-500">CampusNet</td>
+                      <td>Univ. Central</td>
+                      <td><span class="status-badge status-pause">Pausado</span></td>
+                      <td><span class="priority-badge priority-mid">Media</span></td>
+                      <td class="mono-text">01/09/25</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-500">LogiTrack</td>
+                      <td>FastShip SL</td>
+                      <td><span class="status-badge status-active">En curso</span></td>
+                      <td><span class="priority-badge priority-high">Alta</span></td>
+                      <td class="mono-text">10/07/25</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+
+          <!-- Accordion FAQ / Actividad -->
+          <div class="col-xl-5">
+            <section class="dash-card" aria-labelledby="actividad-titulo">
+              <div class="dash-card-header">
+                <h2 id="actividad-titulo" class="dash-card-title">Registro de actividad</h2>
+              </div>
+
+              <!-- Accordion Bootstrap personalizado -->
+              <div class="accordion nova-accordion" id="activityAccordion">
+
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#acc1" aria-expanded="true" aria-controls="acc1">
+                      <span class="acc-dot acc-green" aria-hidden="true"></span>
+                      Deploy EcoCommerce v2.1
+                    </button>
+                  </h3>
+                  <div id="acc1" class="accordion-collapse collapse show" data-bs-parent="#activityAccordion">
+                    <div class="accordion-body">
+                      <p class="mb-1">Deploy exitoso en producción. Sin errores. Tiempo de build: <span class="mono-text accent">1m 42s</span></p>
+                      <span class="mono-text text-muted small">Hoy, 09:14</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#acc2" aria-expanded="false" aria-controls="acc2">
+                      <span class="acc-dot acc-yellow" aria-hidden="true"></span>
+                      Alerta: CPU DataViz Pro
+                    </button>
+                  </h3>
+                  <div id="acc2" class="accordion-collapse collapse" data-bs-parent="#activityAccordion">
+                    <div class="accordion-body">
+                      <p class="mb-1">Pico de CPU al <span class="mono-text text-warning">87%</span> durante 3 minutos. Se normalizó automáticamente. Revisar queries de la última versión.</p>
+                      <span class="mono-text text-muted small">Ayer, 23:51</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#acc3" aria-expanded="false" aria-controls="acc3">
+                      <span class="acc-dot acc-blue" aria-hidden="true"></span>
+                      Nuevo cliente: FastShip SL
+                    </button>
+                  </h3>
+                  <div id="acc3" class="accordion-collapse collapse" data-bs-parent="#activityAccordion">
+                    <div class="accordion-body">
+                      <p class="mb-1">Contrato firmado para el proyecto LogiTrack. Kick-off programado para el <span class="mono-text accent">15/06/2025</span>.</p>
+                      <span class="mono-text text-muted small">Hace 2 días, 11:30</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#acc4" aria-expanded="false" aria-controls="acc4">
+                      <span class="acc-dot acc-green" aria-hidden="true"></span>
+                      FinSight API — Entrega final
+                    </button>
+                  </h3>
+                  <div id="acc4" class="accordion-collapse collapse" data-bs-parent="#activityAccordion">
+                    <div class="accordion-body">
+                      <p class="mb-1">Proyecto entregado y aceptado por el cliente. Factura emitida por <span class="mono-text accent">24.800 €</span>.</p>
+                      <span class="mono-text text-muted small">20/05/2025, 16:00</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <!-- ── Tooltips Demo + Info cards ── -->
+        <section class="dash-card" aria-labelledby="tech-titulo">
+          <div class="dash-card-header">
+            <h2 id="tech-titulo" class="dash-card-title">Stack tecnológico del equipo</h2>
+            <span class="text-muted small">Pasa el cursor para ver detalles</span>
+          </div>
+          <div class="tech-stack-grid" role="list">
+
+            <button class="tech-stack-item" role="listitem"
+              data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-title="Framework principal Frontend — versión 18.3" aria-label="React — Framework principal Frontend versión 18.3">
+              <i class="bi bi-filetype-jsx" aria-hidden="true"></i>
+              <span>React</span>
+            </button>
+
+            <button class="tech-stack-item" role="listitem"
+              data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-title="Backend principal — API REST y microservicios" aria-label="Node.js — Backend principal">
+              <i class="bi bi-filetype-js" aria-hidden="true"></i>
+              <span>Node.js</span>
+            </button>
+
+            <button class="tech-stack-item" role="listitem"
+              data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-title="Base de datos relacional en producción" aria-label="PostgreSQL — Base de datos">
+              <i class="bi bi-database-fill" aria-hidden="true"></i>
+              <span>PostgreSQL</span>
+            </button>
+
+            <button class="tech-stack-item" role="listitem"
+              data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-title="Infraestructura cloud — EC2, S3, RDS, Lambda" aria-label="AWS — Infraestructura cloud">
+              <i class="bi bi-cloud-fill" aria-hidden="true"></i>
+              <span>AWS</span>
+            </button>
+
+            <button class="tech-stack-item" role="listitem"
+              data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-title="Contenerización de todos los servicios" aria-label="Docker — Contenerización">
+              <i class="bi bi-box-seam-fill" aria-hidden="true"></i>
+              <span>Docker</span>
+            </button>
+
+            <button class="tech-stack-item" role="listitem"
+              data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-title="Control de versiones — 47 repos activos" aria-label="Git — Control de versiones">
+              <i class="bi bi-git" aria-hidden="true"></i>
+              <span>Git</span>
+            </button>
+
+          </div>
+        </section>
+
+      </div><!-- fin dash-content -->
+    </main>
+  </div><!-- fin dashboard-layout -->
+
+  <!-- ── Toast de notificación Bootstrap ── -->
+  <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index:9999" aria-live="polite" aria-atomic="true">
+    <div id="notifToast" class="toast nova-toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header border-0">
+        <span class="acc-dot acc-green me-2" aria-hidden="true"></span>
+        <strong class="me-auto">Sistema OK</strong>
+        <small class="text-muted mono-text">ahora</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Cerrar notificación"></button>
+      </div>
+      <div class="toast-body">
+        <i class="bi bi-bell-fill me-2 accent" aria-hidden="true"></i>
+        Tienes 2 alertas nuevas en el sistema de monitorización.
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

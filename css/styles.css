@@ -929,3 +929,241 @@ body {
 @media (max-width: 480px) {
   .portfolio-grid { grid-template-columns: 1fr; }
 }
+
+/* 
+   13. MODALES Bootstrap personalizados
+    */
+.nova-modal {
+  background: var(--nt-surface) !important;
+  border: 1px solid var(--nt-border);
+  border-radius: var(--card-radius);
+  box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+  overflow: hidden;
+}
+.nova-modal .btn-close { filter: invert(1); }
+[data-bs-theme="light"] .nova-modal .btn-close { filter: none; }
+
+.modal-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  background: var(--nt-accent-dim);
+  color: var(--nt-accent);
+  border: 1px solid rgba(168,255,62,0.25);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-pill);
+}
+.modal-hero-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+.modal-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.75rem;
+}
+.modal-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* 
+   14. FORMULARIO DE CONTACTO
+    */
+.contact-card {
+  background: var(--nt-surface);
+  border: 1px solid var(--nt-border);
+  border-radius: var(--card-radius);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-card), var(--shadow-inset);
+}
+
+.form-label {
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: var(--nt-text);
+  margin-bottom: 0.4rem;
+}
+.form-label span { color: var(--nt-accent); }
+
+.nova-input {
+  background: var(--nt-bg) !important;
+  border: 1px solid var(--nt-border) !important;
+  border-radius: var(--radius-sm) !important;
+  color: var(--nt-text) !important;
+  font-family: var(--font-main);
+  padding: 0.7rem 1rem !important;
+  transition: border-color 0.2s, box-shadow 0.2s !important;
+}
+.nova-input::placeholder { color: var(--nt-text-faint) !important; }
+.nova-input:focus {
+  border-color: var(--nt-accent) !important;
+  box-shadow: 0 0 0 3px var(--nt-accent-dim) !important;
+  outline: none !important;
+}
+.nova-input.is-valid {
+  border-color: var(--nt-success) !important;
+  box-shadow: 0 0 0 3px rgba(74,222,128,0.15) !important;
+}
+.nova-input.is-invalid {
+  border-color: var(--nt-danger) !important;
+  box-shadow: 0 0 0 3px rgba(248,113,113,0.15) !important;
+}
+
+/* Range personalizado */
+.budget-range {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.nova-range {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  background: var(--nt-surface-2);
+  border-radius: var(--radius-pill);
+  outline: none;
+  cursor: pointer;
+}
+.nova-range::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  background: var(--nt-accent);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 8px var(--nt-accent-glow);
+  transition: transform 0.2s;
+}
+.nova-range::-webkit-slider-thumb:hover { transform: scale(1.2); }
+
+.budget-display {
+  text-align: right;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--nt-accent);
+  font-weight: 600;
+}
+
+/* Checkbox personalizado */
+.nova-check .form-check-input {
+  width: 1.1em;
+  height: 1.1em;
+  background: var(--nt-bg);
+  border: 1.5px solid var(--nt-border);
+  margin-top: 0.15em;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.nova-check .form-check-input:checked {
+  background-color: var(--nt-accent);
+  border-color: var(--nt-accent);
+}
+.nova-check .form-check-input:focus {
+  box-shadow: 0 0 0 3px var(--nt-accent-dim);
+}
+.nova-check .form-check-label { font-size: 0.875rem; }
+.link-nova { color: var(--nt-accent); text-decoration: underline; }
+
+.valid-feedback   { color: var(--nt-success); font-size: 0.78rem; margin-top: 0.3rem; }
+.invalid-feedback { color: var(--nt-danger);  font-size: 0.78rem; margin-top: 0.3rem; }
+
+/* Toast */
+.nova-toast {
+  background: var(--nt-surface) !important;
+  border: 1px solid var(--nt-border) !important;
+  color: var(--nt-text) !important;
+  box-shadow: var(--shadow-card);
+}
+
+/* 
+   15. FOOTER
+    */
+.nova-footer {
+  background: var(--nt-bg-2);
+  border-top: 1px solid var(--nt-border);
+  padding-top: 0;
+}
+.footer-top { border-bottom: 1px solid var(--nt-border); }
+.footer-tagline { color: var(--nt-text-muted); font-size: 0.85rem; margin: 0; }
+.footer-link {
+  color: var(--nt-text-muted);
+  text-decoration: none;
+  font-size: 0.875rem;
+  margin: 0 0.75rem;
+  transition: color 0.2s;
+  display: inline-block;
+}
+.footer-link:hover { color: var(--nt-accent); }
+.footer-bottom {
+  padding: 1rem 0;
+  text-align: center;
+}
+.footer-bottom p { color: var(--nt-text-faint); font-size: 0.8rem; margin: 0; }
+
+.social-links { display: flex; gap: 0.5rem; justify-content: flex-end; }
+.social-btn {
+  width: 36px;
+  height: 36px;
+  background: var(--nt-surface);
+  border: 1px solid var(--nt-border);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--nt-text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.2s var(--ease-smooth);
+}
+.social-btn:hover {
+  border-color: var(--nt-accent);
+  color: var(--nt-accent);
+  background: var(--nt-accent-dim);
+}
+
+/* 
+   16. OFFCANVAS (Dashboard móvil)
+    */
+.nova-offcanvas {
+  background: var(--nt-surface) !important;
+  border-right: 1px solid var(--nt-border) !important;
+}
+
+/* 
+   17. UTILIDADES ACCESIBILIDAD
+    */
+:focus-visible {
+  outline: 2px solid var(--nt-accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 
+   18. RESPONSIVE GLOBAL
+    */
+@media (max-width: 767px) {
+  .hero-title { letter-spacing: -0.02em; }
+  .hero-cta   { flex-direction: column; }
+  .hero-stats { gap: 1.2rem; }
+  .stat-divider { height: 30px; }
+  .contact-card { padding: 1.5rem; }
+  .social-links { justify-content: center; margin-top: 1rem; }
+}
