@@ -100,3 +100,5 @@ Todas las animaciones están definidas en `css/styles.css` a partir de la **lín
 - CSS3 nativo (Grid Layout, Custom Properties, @keyframes, Flexbox)
 - JavaScript ES6+ (IntersectionObserver, requestAnimationFrame)
 - Sin dependencias adicionales de JavaScript
+
+🔗 **Ver la web:** https://javicastro03.github.io/NovaTech/
